@@ -110,7 +110,7 @@ function paginaSiguiente() {
 
 async function consultarAPI() {
     try {
-        const url = 'http://localhost:3000/api/servicios';
+        const url = 'http://localhost:3200/api/servicios';
         const resultado = await fetch(url);
         const servicios = await resultado.json();
         mostrarServicios( servicios );
@@ -286,7 +286,7 @@ function mostrarResumen() {
         weekday: 'long'
     })
 
-    console.log(fechaFormateada)
+    // console.log(fechaFormateada)
 
     const fechaCita = document.createElement('P');
     fechaCita.innerHTML = `<span>Fecha:</span> ${fechaFormateada}`;
@@ -308,5 +308,10 @@ function mostrarResumen() {
 }
 
 function reservarCita() {
-    console.log('reservando la cita')
+    const datos = new FormData()
+
+    datos.append('nombre', cita.nombre)
+
+    
+    // console.log([...datos])
 }
