@@ -1,0 +1,22 @@
+{
+    "name": "emiliano/app-salon",
+    "description": "Proyecto en PHP 8 utiliazndo MVC. SASS y Gulp y MySQL",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "MVC\\" : "./",
+            "Controllers\\" : "./controllers",
+            "Model\\" : "./models",
+            "Classes\\": "./classes"
+        }
+    },
+    "authors": [
+        {
+            "name": "WeroKikez",
+            "email": "enriquez.emiliano15@gmail.com"
+        }
+    ],
+    "require": {
+        "phpmailer/phpmailer": "^6.9"
+    }
+}
