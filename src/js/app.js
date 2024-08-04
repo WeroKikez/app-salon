@@ -326,13 +326,34 @@ async function reservarCita() {
     
     // console.log([...datos])
 
-    // Petición hacia la API
-    const url = 'http://localhost:3200/api/citas'
-    const respuesta = await fetch(url, {
-        method: 'POST',
-        body: datos
-    })
+    try {
+        // Petición hacia la API
+        const url = 'http://localhost:3200/api/citas'
+        const respuesta = await fetch(url, {
+            method: 'POST',
+            body: datos
+        })
 
-    const resultado = await respuesta.json()
-    console.log( resultado )
+        const resultado = await respuesta.json()
+        
+        if(resultado.resultado) {
+            swal({
+                title: "Cita Creada",
+                text: "Cita Creada Correctamente",
+                icon: "success",
+                button: "OK",
+            }).then( () => {
+                setTimeout(() => {
+                    window.location.reload()    
+                }, 1500);
+            })
+        }
+    } catch (error) {
+        swal({
+            title: "Error",
+            text: "Erro al guardar la cita",
+            icon: "error",
+            button: "OK",
+        })
+    }
 }
