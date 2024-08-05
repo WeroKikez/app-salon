@@ -335,7 +335,6 @@ async function reservarCita() {
         })
 
         const resultado = await respuesta.json()
-        
         if(resultado.resultado) {
             swal({
                 title: "Cita Creada",
