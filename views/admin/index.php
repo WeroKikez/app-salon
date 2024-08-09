@@ -23,8 +23,14 @@
         </div>
     </form>
 </div>
+ 
+<?php
+    if(count($citas) === 0) {
+        echo "<h2>No hay Citas en esta fecha</h2>";
+    }
+?>
 
-<div class="citas-admin">
+<div id="citas-admin">
     <ul class="citas">
         <?php 
         foreach($citas as $key => $cita) { 
@@ -57,3 +63,7 @@
         <?php } // Fin foreach ?>
     </ul>
 </div>
+
+<?php
+    $script = "<script src='build/js/buscador.js'></script>";
+?>
